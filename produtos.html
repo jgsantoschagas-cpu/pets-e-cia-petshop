@@ -5,78 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Catálogo de acessórios, rações e produtos de higiene da Pets & Cia.">
     <title>Produtos | Pets &amp; Cia Petshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Pets &amp; Cia Petshop</h1>
-        <p>Carinho, cuidado e qualidade para o seu melhor amigo.</p>
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Serviços</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <hr>
-    </header>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <main>
-        <h2>Produtos</h2>
-        <p>Confira duas opções em cada categoria. Os valores são apresentados em reais.</p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pet" aria-label="Navegação principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pets &amp; Cia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Início</a>
+                    <a class="nav-link active" aria-current="page" href="produtos.html">Produtos</a>
+                    <a class="nav-link" href="servicos.html">Serviços</a>
+                    <a class="nav-link" href="cadastro.html">Cadastro e agendamento</a>
+                    <a class="nav-link" href="ajuda.html">Ajuda</a>
+                </div>
+                <button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0" type="button" onclick="alternarContraste()">Alto contraste</button>
+            </div>
+        </div>
+    </nav>
 
-        <section id="acessorios">
-            <h3>Acessórios</h3>
-            <article>
-                <h4>Coleira ajustável</h4>
-                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Cão usando uma coleira ajustável">
-                <p>Coleira confortável e resistente, com regulagem para cães de pequeno e médio porte.</p>
-                <p><strong>Valor: R$ 39,90</strong></p>
-            </article>
-            <article>
-                <h4>Brinquedo de corda</h4>
-                <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Cão brincando ao ar livre">
-                <p>Brinquedo trançado para morder e puxar, indicado para diversão e enriquecimento ambiental.</p>
-                <p><strong>Valor: R$ 24,90</strong></p>
-            </article>
+    <main id="conteudo" class="container py-5">
+        <h1 class="section-title">Produtos</h1>
+        <p class="mb-4">Confira duas opções em cada categoria. Os valores são apresentados em reais.</p>
+
+        <section class="mb-5" aria-labelledby="tituloAcessorios">
+            <h2 id="tituloAcessorios" class="h3 text-pet mb-3">Acessórios</h2>
+            <div class="row g-4">
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Cão usando uma coleira ajustável"><div class="card-body"><h3 class="h5">Coleira ajustável</h3><p>Coleira confortável e resistente, com regulagem para cães de pequeno e médio porte.</p><p class="fw-bold mb-0">R$ 39,90</p></div></article></div>
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Cão brincando ao ar livre"><div class="card-body"><h3 class="h5">Brinquedo de corda</h3><p>Brinquedo trançado para morder e puxar, indicado para diversão e enriquecimento ambiental.</p><p class="fw-bold mb-0">R$ 24,90</p></div></article></div>
+            </div>
         </section>
 
-        <section id="racoes">
-            <h3>Rações não perecíveis</h3>
-            <article>
-                <h4>Ração Premium para cães adultos - 3 kg</h4>
-                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Cão próximo a um recipiente de ração">
-                <p>Alimento seco completo para cães adultos, com proteínas, vitaminas e minerais.</p>
-                <p><strong>Valor: R$ 74,90</strong></p>
-            </article>
-            <article>
-                <h4>Ração Premium para gatos adultos - 3 kg</h4>
-                <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Gato representando a linha de ração felina">
-                <p>Alimento seco completo para gatos adultos, com taurina e nutrientes essenciais.</p>
-                <p><strong>Valor: R$ 82,90</strong></p>
-            </article>
+        <section class="mb-5" aria-labelledby="tituloRacoes">
+            <h2 id="tituloRacoes" class="h3 text-pet mb-3">Rações não perecíveis</h2>
+            <div class="row g-4">
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Cão próximo a um recipiente de ração"><div class="card-body"><h3 class="h5">Ração Premium para cães adultos - 3 kg</h3><p>Alimento seco completo para cães adultos, com proteínas, vitaminas e minerais.</p><p class="fw-bold mb-0">R$ 74,90</p></div></article></div>
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Gato representando a linha de ração felina"><div class="card-body"><h3 class="h5">Ração Premium para gatos adultos - 3 kg</h3><p>Alimento seco completo para gatos adultos, com taurina e nutrientes essenciais.</p><p class="fw-bold mb-0">R$ 82,90</p></div></article></div>
+            </div>
         </section>
 
-        <section id="higiene">
-            <h3>Higiene e limpeza</h3>
-            <article>
-                <h4>Shampoo neutro para pets - 500 ml</h4>
-                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Cão durante os cuidados de higiene">
-                <p>Shampoo de uso externo com fórmula suave para a limpeza de cães e gatos.</p>
-                <p><strong>Valor: R$ 29,90</strong></p>
-            </article>
-            <article>
-                <h4>Tapete higiênico - pacote com 30 unidades</h4>
-                <img src="https://images.unsplash.com/photo-1593134257782-e89567b7718a?auto=format&amp;fit=crop&amp;w=500&amp;q=80" width="360" alt="Cão filhote representando o uso de tapete higiênico">
-                <p>Tapete absorvente com barreira antivazamento e fitas adesivas para fixação.</p>
-                <p><strong>Valor: R$ 54,90</strong></p>
-            </article>
+        <section aria-labelledby="tituloHigiene">
+            <h2 id="tituloHigiene" class="h3 text-pet mb-3">Higiene e limpeza</h2>
+            <div class="row g-4">
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Cão durante os cuidados de higiene"><div class="card-body"><h3 class="h5">Shampoo neutro para pets - 500 ml</h3><p>Shampoo de uso externo com fórmula suave para a limpeza de cães e gatos.</p><p class="fw-bold mb-0">R$ 29,90</p></div></article></div>
+                <div class="col-md-6"><article class="card"><img src="https://images.unsplash.com/photo-1593134257782-e89567b7718a?auto=format&amp;fit=crop&amp;w=700&amp;q=80" class="card-img-top" alt="Cão filhote representando o uso de tapete higiênico"><div class="card-body"><h3 class="h5">Tapete higiênico - pacote com 30 unidades</h3><p>Tapete absorvente com barreira antivazamento e fitas adesivas para fixação.</p><p class="fw-bold mb-0">R$ 54,90</p></div></article></div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <hr>
-        <nav aria-label="Navegação do rodapé"><a href="index.html">Início</a> | <a href="produtos.html">Produtos</a> | <a href="servicos.html">Serviços</a> | <a href="ajuda.html">Ajuda</a></nav>
-        <p>Projeto acadêmico desenvolvido por João Gabriel das Chagas Santos.</p>
-        <p>&copy; 2026 Pets &amp; Cia Petshop. Todos os direitos reservados.</p>
-    </footer>
+    <footer class="bg-pet text-white py-4"><div class="container"><p class="mb-1">Projeto acadêmico desenvolvido por João Gabriel da Chagas Santos.</p><p class="mb-1">&copy; <span class="ano-atual">2026</span> Pets &amp; Cia Petshop.</p><p class="mb-0"><a href="ajuda.html">Ajuda e funcionalidades</a></p></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
