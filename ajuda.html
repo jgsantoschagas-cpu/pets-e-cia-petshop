@@ -3,49 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ajuda e descrição das funcionalidades da Pets & Cia.">
+    <meta name="description" content="Ajuda e descrição das funcionalidades da Pets & Cia Petshop.">
     <title>Ajuda | Pets &amp; Cia Petshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Pets &amp; Cia Petshop</h1>
-        <p>Carinho, cuidado e qualidade para o seu melhor amigo.</p>
-        <nav aria-label="Navegação principal"><a href="index.html">Início</a> | <a href="produtos.html">Produtos</a> | <a href="servicos.html">Serviços</a> | <a href="ajuda.html">Ajuda</a></nav>
-        <hr>
-    </header>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <main>
-        <h2>Ajuda</h2>
-        <section>
-            <h3>Como navegar</h3>
-            <p>Use os links do cabeçalho ou do rodapé para acessar todas as páginas do sistema.</p>
-            <dl>
-                <dt><strong>Início</strong></dt><dd>Apresenta o petshop, suas principais opções e os dados de atendimento.</dd>
-                <dt><strong>Produtos</strong></dt><dd>Exibe as três categorias, com imagem, descrição e valor de cada produto.</dd>
-                <dt><strong>Serviços</strong></dt><dd>Apresenta banho e tosa, seus valores e a disponibilidade de tele-busca.</dd>
-                <dt><strong>Ajuda</strong></dt><dd>Explica as funcionalidades e os meios de contato.</dd>
-            </dl>
-        </section>
-        <section>
-            <h3>Como solicitar atendimento</h3>
-            <ol>
-                <li>Acesse a página de serviços.</li>
-                <li>Escolha a modalidade desejada, com ou sem tele-busca.</li>
-                <li>Entre em contato por telefone ou e-mail para confirmar data, horário e valor.</li>
-            </ol>
-        </section>
-        <section>
-            <h3>Contato</h3>
-            <p>Telefone: <a href="tel:+555133334444">(51) 3333-4444</a></p>
-            <p>E-mail: <a href="mailto:contato@petsecia.com.br">contato@petsecia.com.br</a></p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pet" aria-label="Navegação principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pets &amp; Cia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Início</a>
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                    <a class="nav-link" href="servicos.html">Serviços</a>
+                    <a class="nav-link" href="cadastro.html">Cadastro e agendamento</a>
+                    <a class="nav-link active" aria-current="page" href="ajuda.html">Ajuda</a>
+                </div>
+                <button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0" type="button" onclick="alternarContraste()">Alto contraste</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="conteudo" class="container py-5">
+        <h1 class="section-title">Ajuda e funcionalidades</h1>
+        <p>Esta página descreve os principais recursos disponíveis na Fase 2 do sistema web da Pets & Cia.</p>
+
+        <div class="accordion" id="ajudaAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ajuda1" aria-expanded="true" aria-controls="ajuda1">Navegação e páginas</button></h2>
+                <div id="ajuda1" class="accordion-collapse collapse show" data-bs-parent="#ajudaAccordion"><div class="accordion-body">O menu superior permite acessar Início, Produtos, Serviços, Cadastro e agendamento e Ajuda. Em telas menores, o menu é recolhido automaticamente pelo Bootstrap.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ajuda2" aria-expanded="false" aria-controls="ajuda2">Carrossel e recursos JavaScript</button></h2>
+                <div id="ajuda2" class="accordion-collapse collapse" data-bs-parent="#ajudaAccordion"><div class="accordion-body">A página inicial possui um carrossel automático com destaques. O JavaScript também atualiza data e hora, formata CPF e telefone, controla os campos de tele-busca, apresenta o resumo do agendamento e permite ativar alto contraste.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ajuda3" aria-expanded="false" aria-controls="ajuda3">Cadastro e agendamento</button></h2>
+                <div id="ajuda3" class="accordion-collapse collapse" data-bs-parent="#ajudaAccordion"><div class="accordion-body">Na página Cadastro e agendamento, o usuário informa dados do cliente e do pet, escolhe o serviço, seleciona tele-busca ou entrega no local e define data e horário. Os campos obrigatórios são verificados antes da confirmação.</div></div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ajuda4" aria-expanded="false" aria-controls="ajuda4">Acessibilidade</button></h2>
+                <div id="ajuda4" class="accordion-collapse collapse" data-bs-parent="#ajudaAccordion"><div class="accordion-body">As imagens relevantes possuem atributo alt com descrição textual para leitores de tela. Também foram incluídos link para ir direto ao conteúdo, foco visual para navegação por teclado e botão de alto contraste.</div></div>
+            </div>
+        </div>
+
+        <section class="mt-5" aria-labelledby="tituloContato">
+            <h2 id="tituloContato" class="h3 text-pet">Contato</h2>
+            <p>Telefone: <a href="tel:+555133334444">(51) 3333-4444</a><br>E-mail: <a href="mailto:contato@petsecia.com.br">contato@petsecia.com.br</a></p>
         </section>
     </main>
 
-    <footer>
-        <hr>
-        <nav aria-label="Navegação do rodapé"><a href="index.html">Início</a> | <a href="produtos.html">Produtos</a> | <a href="servicos.html">Serviços</a> | <a href="ajuda.html">Ajuda</a></nav>
-        <p>Projeto acadêmico desenvolvido por João Gabriel das Chagas Santos.</p>
-        <p>&copy; 2026 Pets &amp; Cia Petshop. Todos os direitos reservados.</p>
-    </footer>
+    <footer class="bg-pet text-white py-4"><div class="container"><p class="mb-1">Projeto acadêmico desenvolvido por João Gabriel da Chagas Santos.</p><p class="mb-1">&copy; <span class="ano-atual">2026</span> Pets &amp; Cia Petshop.</p><p class="mb-0">Página de ajuda da Fase 2.</p></div></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
