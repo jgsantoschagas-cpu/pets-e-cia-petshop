@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de cliente, pet e agendamento de banho e tosa da Pets & Cia.">
+    <title>Cadastro e agendamento | Pets &amp; Cia Petshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pet" aria-label="Navegação principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pets &amp; Cia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">Início</a>
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                    <a class="nav-link" href="servicos.html">Serviços</a>
+                    <a class="nav-link active" aria-current="page" href="cadastro.html">Cadastro e agendamento</a>
+                    <a class="nav-link" href="ajuda.html">Ajuda</a>
+                </div>
+                <button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0" type="button" onclick="alternarContraste()">Alto contraste</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="conteudo" class="container py-5">
+        <header class="mb-4">
+            <h1 class="section-title">Cadastro e agendamento</h1>
+            <p>Preencha os dados do responsável e do pet, escolha o serviço e defina a forma, a data e o horário do atendimento.</p>
+            <p class="small text-secondary">Os campos marcados com * são obrigatórios.</p>
+        </header>
+
+        <form id="formAgendamento" class="needs-validation" novalidate onsubmit="confirmarAgendamento(event)">
+            <section class="form-panel p-4 mb-4" aria-labelledby="tituloCliente">
+                <h2 id="tituloCliente" class="h4 text-pet">Dados do cliente</h2>
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <label for="nomeCliente" class="form-label required">Nome completo</label>
+                        <input type="text" class="form-control" id="nomeCliente" name="nomeCliente" placeholder="Digite seu nome completo" required>
+                        <div class="invalid-feedback">Informe o nome do cliente.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="cpf" class="form-label required">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" maxlength="14" oninput="formatarCPF(this)" required>
+                        <div class="invalid-feedback">Informe o CPF.</div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="endereco" class="form-label required">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua, número, bairro e cidade" required>
+                        <div class="invalid-feedback">Informe o endereço.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="telefone" class="form-label required">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(51) 99999-9999" maxlength="15" oninput="formatarTelefone(this)" required>
+                        <div class="invalid-feedback">Informe o telefone.</div>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="email" class="form-label required">E-mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required>
+                        <div class="invalid-feedback">Informe um e-mail válido.</div>
+                    </div>
+                    <fieldset class="col-md-4">
+                        <legend class="form-label required fs-6">Sexo</legend>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="Feminino" required>
+                            <label class="form-check-label" for="sexoF">Feminino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="Masculino" required>
+                            <label class="form-check-label" for="sexoM">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="sexo" id="sexoO" value="Outro" required>
+                            <label class="form-check-label" for="sexoO">Outro</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </section>
+
+            <section class="form-panel p-4 mb-4" aria-labelledby="tituloPet">
+                <h2 id="tituloPet" class="h4 text-pet">Dados do pet</h2>
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label for="nomePet" class="form-label required">Nome do pet</label>
+                        <input type="text" class="form-control" id="nomePet" name="nomePet" placeholder="Nome do animal" required>
+                        <div class="invalid-feedback">Informe o nome do pet.</div>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="raca" class="form-label required">Raça</label>
+                        <input type="text" class="form-control" id="raca" name="raca" placeholder="Ex.: Poodle, SRD, Siamês" required>
+                        <div class="invalid-feedback">Informe a raça.</div>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="idade" class="form-label required">Idade</label>
+                        <input type="number" class="form-control" id="idade" name="idade" min="0" max="30" placeholder="Anos" required>
+                        <div class="invalid-feedback">Informe a idade.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-panel p-4 mb-4" aria-labelledby="tituloServico">
+                <h2 id="tituloServico" class="h4 text-pet">Serviço e método de atendimento</h2>
+                <div class="row g-4">
+                    <fieldset class="col-md-6">
+                        <legend class="form-label required fs-6">Serviço</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="servico" id="banho" value="Banho" required>
+                            <label class="form-check-label" for="banho">Banho</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="servico" id="tosa" value="Tosa">
+                            <label class="form-check-label" for="tosa">Tosa</label>
+                        </div>
+                        <div class="form-text">Marque banho ou banho e tosa.</div>
+                    </fieldset>
+                    <fieldset class="col-md-6">
+                        <legend class="form-label required fs-6">Método de agendamento</legend>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodo" id="teleBusca" value="Tele-busca" onchange="atualizarMetodo()" required>
+                            <label class="form-check-label" for="teleBusca">Tele-busca</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="metodo" id="entregaLocal" value="Entrega do pet no local" onchange="atualizarMetodo()" required>
+                            <label class="form-check-label" for="entregaLocal">Entrega do pet no local</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div id="dadosTeleBusca" class="mt-3 d-none">
+                    <label for="enderecoBusca" class="form-label">Endereço para tele-busca</label>
+                    <input type="text" class="form-control" id="enderecoBusca" name="enderecoBusca" placeholder="Informe o endereço onde o pet deverá ser buscado">
+                </div>
+
+                <div class="row g-3 mt-1">
+                    <div class="col-md-6">
+                        <label for="data" class="form-label required">Data</label>
+                        <input type="date" class="form-control" id="data" name="data" required>
+                        <div class="invalid-feedback">Escolha uma data.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="horario" class="form-label required">Horário</label>
+                        <input type="time" class="form-control" id="horario" name="horario" min="08:00" max="17:30" step="1800" required>
+                        <div class="form-text">Horários disponíveis entre 08:00 e 17:30.</div>
+                        <div class="invalid-feedback">Escolha um horário.</div>
+                    </div>
+                </div>
+
+                <div class="form-check mt-3">
+                    <input class="form-check-input" type="checkbox" id="autorizacao" name="autorizacao" required>
+                    <label class="form-check-label required" for="autorizacao">Confirmo que os dados informados estão corretos</label>
+                    <div class="invalid-feedback">É necessário confirmar os dados.</div>
+                </div>
+            </section>
+
+            <button type="submit" class="btn btn-pet btn-lg">Confirmar agendamento</button>
+        </form>
+
+        <div id="resumoAgendamento" class="alert alert-success mt-4 d-none" role="status" aria-live="polite"></div>
+    </main>
+
+    <footer class="bg-pet text-white py-4">
+        <div class="container">
+            <p class="mb-1">Projeto acadêmico desenvolvido por João Gabriel da Chagas Santos.</p>
+            <p class="mb-1">&copy; <span class="ano-atual">2026</span> Pets &amp; Cia Petshop.</p>
+            <p class="mb-0"><a href="ajuda.html">Ajuda e funcionalidades</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
