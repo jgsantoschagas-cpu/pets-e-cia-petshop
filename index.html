@@ -3,63 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pets & Cia Petshop: produtos, banho, tosa e tele-busca.">
-    <title>Pets & Cia Petshop</title>
+    <meta name="description" content="Pets & Cia Petshop: produtos, banho, tosa, tele-busca e agendamento.">
+    <title>Pets &amp; Cia Petshop</title>
+    <!-- Bootstrap e estilos próprios da Fase 2. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Pets &amp; Cia Petshop</h1>
-        <p>Carinho, cuidado e qualidade para o seu melhor amigo.</p>
-        <nav aria-label="Navegação principal">
-            <a href="index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Serviços</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <hr>
-    </header>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
-    <main>
-        <section>
-            <h2>Bem-vindo à Pets &amp; Cia</h2>
-            <p>Encontre produtos essenciais e serviços para cães e gatos em um só lugar.</p>
-            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=900&amp;q=80" width="700" alt="Cão e gato juntos representando os animais atendidos pelo petshop">
+    <!-- Menu responsivo construído com Bootstrap. -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pet" aria-label="Navegação principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Pets &amp; Cia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu de navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                    <a class="nav-link" href="produtos.html">Produtos</a>
+                    <a class="nav-link" href="servicos.html">Serviços</a>
+                    <a class="nav-link" href="cadastro.html">Cadastro e agendamento</a>
+                    <a class="nav-link" href="ajuda.html">Ajuda</a>
+                </div>
+                <button class="btn btn-outline-light ms-lg-3 mt-2 mt-lg-0" type="button" onclick="alternarContraste()">Alto contraste</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="conteudo">
+        <!-- Carrossel solicitado na Fase 2. Todas as imagens possuem texto alternativo. -->
+        <section id="carrosselPetshop" class="carousel slide hero-carousel" data-bs-ride="carousel" aria-label="Destaques do petshop">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carrosselPetshop" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carrosselPetshop" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carrosselPetshop" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" class="d-block w-100" alt="Cão e gato juntos representando os animais atendidos pela Pets e Cia">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Pets &amp; Cia Petshop</h1>
+                        <p>Carinho, cuidado e qualidade para o seu melhor amigo.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1558944351-c3b6d7804f9a?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" class="d-block w-100" alt="Cão recebendo cuidados de higiene em um petshop">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Banho e tosa</h2>
+                        <p>Atendimento com horário marcado e opção de tele-busca.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&amp;fit=crop&amp;w=1400&amp;q=80" class="d-block w-100" alt="Cachorro em ambiente confortável aguardando atendimento">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Agende pela página</h2>
+                        <p>Cadastre o cliente, o pet e escolha data, horário e serviço.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carrosselPetshop" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carrosselPetshop" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </section>
 
-        <section>
-            <h2>O que oferecemos</h2>
-            <ul>
-                <li>Acessórios para conforto e diversão.</li>
-                <li>Rações não perecíveis para cães e gatos.</li>
-                <li>Produtos de higiene e limpeza.</li>
-                <li>Banho e tosa, com ou sem tele-busca.</li>
-            </ul>
-            <p><a href="produtos.html">Conheça nossos produtos</a></p>
-            <p><a href="servicos.html">Consulte nossos serviços</a></p>
+        <section class="container py-5">
+            <h2 class="section-title">O que oferecemos</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <article class="card p-4">
+                        <h3 class="h5 text-pet">Produtos</h3>
+                        <p>Acessórios, rações não perecíveis e produtos de higiene e limpeza para cães e gatos.</p>
+                        <a class="btn btn-pet mt-auto" href="produtos.html">Ver produtos</a>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="card p-4">
+                        <h3 class="h5 text-pet">Banho e tosa</h3>
+                        <p>Serviços com agendamento e possibilidade de tele-busca ou entrega do pet no local.</p>
+                        <a class="btn btn-pet mt-auto" href="servicos.html">Ver serviços</a>
+                    </article>
+                </div>
+                <div class="col-md-4">
+                    <article class="card p-4">
+                        <h3 class="h5 text-pet">Agendamento</h3>
+                        <p>Formulário para cadastrar o responsável, o pet e escolher serviço, data e horário.</p>
+                        <a class="btn btn-pet mt-auto" href="cadastro.html">Agendar atendimento</a>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <h2>Atendimento</h2>
-            <address>
-                Rua dos Animais, 100 - Centro<br>
-                Porto Alegre - RS<br>
-                Telefone: <a href="tel:+555133334444">(51) 3333-4444</a><br>
-                E-mail: <a href="mailto:contato@petsecia.com.br">contato@petsecia.com.br</a>
-            </address>
-            <p>Segunda a sábado, das 8h às 18h.</p>
+        <section class="container pb-5">
+            <div class="row g-4 align-items-start">
+                <div class="col-md-6">
+                    <h2 class="section-title">Atendimento</h2>
+                    <address>
+                        Rua dos Animais, 100 - Centro<br>
+                        Porto Alegre - RS<br>
+                        Telefone: <a href="tel:+555133334444">(51) 3333-4444</a><br>
+                        E-mail: <a href="mailto:contato@petsecia.com.br">contato@petsecia.com.br</a>
+                    </address>
+                    <p>Segunda a sábado, das 8h às 18h.</p>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Data e hora de acesso</h2>
+                    <p id="relogio" class="fs-5" aria-live="polite">Carregando...</p>
+                    <p class="small">Este relógio é atualizado automaticamente por JavaScript.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <hr>
-        <nav aria-label="Navegação do rodapé">
-            <a href="index.html">Início</a> |
-            <a href="produtos.html">Produtos</a> |
-            <a href="servicos.html">Serviços</a> |
-            <a href="ajuda.html">Ajuda</a>
-        </nav>
-        <p>Projeto acadêmico desenvolvido por João Gabriel das Chagas Santos.</p>
-        <p>&copy; 2026 Pets &amp; Cia Petshop. Todos os direitos reservados.</p>
+    <footer class="bg-pet text-white py-4">
+        <div class="container">
+            <p class="mb-1">Projeto acadêmico desenvolvido por João Gabriel da Chagas Santos.</p>
+            <p class="mb-1">&copy; <span class="ano-atual">2026</span> Pets &amp; Cia Petshop.</p>
+            <p class="mb-0"><a href="ajuda.html">Ajuda e funcionalidades</a></p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
