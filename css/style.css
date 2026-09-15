@@ -1,0 +1,157 @@
+/* Estilos complementares da Fase 2 - Pets & Cia */
+:root {
+    --pet-primary: #176b5b;
+    --pet-primary-dark: #0f4d42;
+    --pet-light: #f5fbf9;
+    --pet-text: #24312f;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--pet-text);
+    background-color: #ffffff;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 2000;
+    padding: 0.75rem 1rem;
+    background: #000;
+    color: #fff;
+}
+
+.skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.bg-pet {
+    background-color: var(--pet-primary) !important;
+}
+
+.text-pet {
+    color: var(--pet-primary-dark) !important;
+}
+
+.btn-pet {
+    background-color: var(--pet-primary);
+    border-color: var(--pet-primary);
+    color: #fff;
+}
+
+.btn-pet:hover,
+.btn-pet:focus {
+    background-color: var(--pet-primary-dark);
+    border-color: var(--pet-primary-dark);
+    color: #fff;
+}
+
+.hero-carousel img {
+    height: 430px;
+    object-fit: cover;
+    filter: brightness(0.62);
+}
+
+.carousel-caption {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.75);
+}
+
+.section-title {
+    margin-bottom: 1.5rem;
+    color: var(--pet-primary-dark);
+}
+
+.card {
+    height: 100%;
+    border: 1px solid #d9e7e2;
+}
+
+.card-img-top {
+    height: 230px;
+    object-fit: cover;
+}
+
+.service-card,
+.form-panel {
+    border-radius: 0.8rem;
+    box-shadow: 0 0.35rem 1rem rgba(26, 82, 70, 0.08);
+}
+
+.form-panel {
+    background-color: var(--pet-light);
+    border: 1px solid #dbece7;
+}
+
+.required::after {
+    content: " *";
+    color: #b00020;
+}
+
+#resumoAgendamento {
+    min-height: 3.5rem;
+}
+
+footer {
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #d9fff5;
+}
+
+:focus-visible {
+    outline: 3px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+/* Modo de alto contraste acionado por JavaScript. */
+body.alto-contraste {
+    background: #000;
+    color: #fff;
+}
+
+body.alto-contraste .navbar,
+body.alto-contraste footer,
+body.alto-contraste .bg-pet,
+body.alto-contraste .form-panel,
+body.alto-contraste .card {
+    background: #000 !important;
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+body.alto-contraste a,
+body.alto-contraste .text-pet,
+body.alto-contraste .section-title,
+body.alto-contraste .form-label,
+body.alto-contraste .form-check-label {
+    color: #ffeb3b !important;
+}
+
+body.alto-contraste .form-control,
+body.alto-contraste .form-select {
+    background: #111;
+    color: #fff;
+    border-color: #fff;
+}
+
+@media (max-width: 767.98px) {
+    .hero-carousel img {
+        height: 330px;
+    }
+}
